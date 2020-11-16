@@ -1,0 +1,10 @@
+import pandas as pd
+employees = pd.read_csv('D:\\Github\\Python\\PythonData\\code\\data\\employees.csv',encoding='GBK')
+print(type(employees))
+print(employees)
+passengers = pd.read_csv('D:\\Github\\Python\\PythonData\\code\\data\\titanic.csv',encoding='utf-8')
+print('-' * 80)
+print(passengers)
+customers = pd.read_excel('D:\\Github\\Python\\PythonData\\code\\data\\customers.xls',sheet_name='All')
+print('-' * 80)
+print(customers)
