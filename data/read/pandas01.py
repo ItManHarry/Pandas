@@ -21,4 +21,4 @@ df2 = pd.DataFrame(data=[
 ],columns=['C01','C02','C03','C04','C05'])
 print(df2)
 print('-' * 80)
-df2.to_excel('C:\\Users\\20112004\\Desktop\\tmp\\DATA.xlsx',encoding='GBK')
+df2.to_excel('C:\\Users\\20112004\\Desktop\\tmp\\DATA.xlsx',encoding='GBK',index=False)
