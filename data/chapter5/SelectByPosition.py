@@ -7,6 +7,7 @@ columns = ['职号','邮箱','年龄','手机号','性别','地区']
 df = pd.DataFrame(data=data,columns=columns)
 print('Data : \n', df)
 sl = [True, False, True, True]
+#按照实际位置筛选
 print('0 - 10 records : \n', df.iloc[0:10])                         #取某个范围内的数据不包括右侧边界
 print('0,3,5,7 records : \n', df.iloc[[0,3,5,7]])                   #取具体的某几条数据
 print('0 - 10 rows, 1 - 3 columns : \n', df.iloc[0:11,1:4])         #取某几列、某几行数据(范围别)
