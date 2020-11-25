@@ -7,16 +7,15 @@ columns = ['职号','邮箱','年龄','手机号','性别','地区']
 df = pd.DataFrame(data=data,columns=columns)
 df.set_index(['地区','手机号'], inplace = True)
 print('Data : \n', df)
-sl = [True, False, True, True]
-#按照索引值筛选
-print('Shanghai and Hunan : \n', df.loc[['上海','湖南']])
-#print(df.loc[[('河北','15254809555'),('广州','15273142801')]])
-#多索引筛选
-'''
-    df.xs(
-        key,            #索引值
-        level=None      #使用哪个索引
-        drop_level=True #是否删除索引列
-    )
-'''
-print('ShangHai data : \n', df.xs('上海', level=0, drop_level=False))
+#年龄范围筛选
+print('Person whose age above 30 : \n',df[df.年龄 > 30])
+#列表筛选
+ages = [23,25,30,35,40]
+print('Person whose age in (23,25,30,35,40) : \n', df[df.年龄.isin(ages)])
+#将索引恢复为列
+df.reset_index(['地区','手机号'],inplace=True)
+#只设置地区为索引列
+df.set_index('地区', inplace=True)
+print('Person live in 山东 and 山西 : \n', df[df.index.isin(['山东','山西'])])
+#多重条件联合查询
+print('Person age between 25 and 35', df[(df.年龄 > 25) & (df.年龄 < 35)])
